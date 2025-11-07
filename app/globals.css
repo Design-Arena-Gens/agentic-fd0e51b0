@@ -1,0 +1,265 @@
+:root {
+  color-scheme: light dark;
+  font-family: var(--font-family, "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+  background-color: #040511;
+  color: #f4f6fb;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(58, 98, 255, 0.2), transparent 60%), #040511;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  display: block;
+}
+
+.page {
+  padding: 3rem clamp(1.5rem, 5vw, 4rem) 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-bottom: 4rem;
+}
+
+.hero__content h1 {
+  font-size: clamp(2.75rem, 5vw, 3.75rem);
+  line-height: 1.05;
+  margin: 0.35rem 0 1rem;
+}
+
+.hero__content .subtitle {
+  color: rgba(244, 246, 251, 0.8);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  max-width: 36rem;
+}
+
+.eyebrow {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: rgba(140, 152, 255, 0.9);
+}
+
+.cta-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border 0.15s ease;
+}
+
+.button--primary {
+  background: linear-gradient(120deg, #5a5df0, #9a6bff);
+  box-shadow: 0 10px 30px rgba(90, 93, 240, 0.35);
+}
+
+.button--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(90, 93, 240, 0.45);
+}
+
+.button--ghost {
+  border-color: rgba(244, 246, 251, 0.3);
+  color: rgba(244, 246, 251, 0.8);
+  background: transparent;
+}
+
+.button--ghost:hover {
+  border-color: rgba(244, 246, 251, 0.6);
+  transform: translateY(-2px);
+}
+
+.hero__card {
+  background: rgba(15, 18, 40, 0.85);
+  border: 1px solid rgba(118, 125, 255, 0.35);
+  border-radius: 24px;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  min-height: 260px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card-description {
+  color: rgba(244, 246, 251, 0.75);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.card-description code {
+  background: rgba(78, 82, 174, 0.3);
+  padding: 0.2rem 0.45rem;
+  border-radius: 6px;
+  font-family: "JetBrains Mono", "Fira Code", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.9rem;
+}
+
+.card-footer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: rgba(159, 166, 255, 0.9);
+  margin-top: auto;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(120deg, #2dd4bf, #22d3ee);
+  box-shadow: 0 0 12px rgba(45, 212, 191, 0.9);
+}
+
+.panel {
+  background: rgba(12, 14, 32, 0.75);
+  border: 1px solid rgba(90, 93, 240, 0.2);
+  border-radius: 24px;
+  padding: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 3rem;
+}
+
+.panel--dark {
+  background: rgba(8, 10, 24, 0.95);
+  border-color: rgba(154, 107, 255, 0.25);
+}
+
+.panel__header h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.8rem, 4vw, 2.3rem);
+}
+
+.panel__header p {
+  color: rgba(244, 246, 251, 0.75);
+  margin: 0;
+  max-width: 38rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.grid--steps {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.grid--resources {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.step-card,
+.resource-card {
+  background: rgba(17, 19, 44, 0.65);
+  border: 1px solid rgba(112, 119, 255, 0.2);
+  border-radius: 18px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.15s ease, border 0.15s ease;
+}
+
+.step-card:hover,
+.resource-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(144, 151, 255, 0.5);
+}
+
+.step-card__number {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(119, 212, 255, 0.85);
+  letter-spacing: 0.2em;
+}
+
+.step-card h3,
+.resource-card h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.step-card p,
+.resource-card p {
+  margin: 0;
+  color: rgba(244, 246, 251, 0.7);
+  line-height: 1.55;
+}
+
+.resource-card a {
+  margin-top: auto;
+  font-weight: 600;
+  color: rgba(129, 182, 255, 0.95);
+}
+
+.panel--dark .code-block {
+  background: rgba(4, 8, 24, 0.9);
+  border: 1px solid rgba(76, 82, 180, 0.45);
+}
+
+.code-block {
+  margin: 2rem 0 0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  overflow: auto;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-family: "JetBrains Mono", "Fira Code", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  color: rgba(203, 213, 255, 0.95);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: rgba(244, 246, 251, 0.65);
+  font-size: 0.95rem;
+}
+
+.footer a {
+  color: rgba(138, 186, 255, 0.95);
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  .hero__card {
+    min-height: unset;
+  }
+}
